@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <h2 class="text-white-50 bg-dark">USER LISTS</h2>
+        <form class="form-inline ml-auto">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-success navbar-toggler-right" type="submit">Search</button>
+        </form>
+    </nav>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2" style="font-size:25px; text-align:center"><br>
+          <a href="<%= users_path %>">All Contacts</a><br><br>
+          <!--<a href="<%#= new_contact_path %>">New Contact</a>-->
+        </div>
+
+        <div class="col-lg-10">
+          <% if notice.present? %>
+            <p><%= notice %></p>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-right fixed-bottom">
+      <a href="<%= new_user_path %>" class="btn btn-info" role="button" style="border: none;background-color: white; ">
+        <span class="fa fa-plus-circle" style="font-size:60px;color:blue;"></span>
+      </button>
+    </div>
+  </body>
+</html>

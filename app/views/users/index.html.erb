@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr style="font-size:30px">
+      <th style="width:30%">Full name</th>
+      <th style="width:25%">Email</th>
+      <th style="width:25%">Contact number</th>
+      <th style="width:10%"></th>
+      <th style="width:10%"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td style="font-size:20px"><%= user.full_name %></td>
+        <td style="font-size:20px"><%= user.email %></td>
+        <td style="font-size:20px"><%= user.contact_number %></td>
+        <td style="font-size:20px; text-align:right"><%= link_to 'Full Detail', user %></td>
+        <td style="font-size:20px; text-align:right"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
